@@ -13,7 +13,8 @@ namespace AppHosting
                 .UseKestrel()
                 .Configure(
                     app => {
-                        app.Run(context => context.Response.WriteAsync("Hello world"));
+                        app.Run(context =>
+                         context.Response.WriteAsync("Hello world"));
                     }
                 )
                 .Build();
