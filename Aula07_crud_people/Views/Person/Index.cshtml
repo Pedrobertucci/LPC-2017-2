@@ -1,0 +1,25 @@
+@model IEnumerable<crud_people.Models.Person>
+<div class="container">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nome</th>
+                <th>Endereço</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </tr>
+        </thead>
+
+        @foreach(var item in Model)
+        {
+            <tr>
+                <td>@item.id</td>
+                <td>@item.name</td>
+                <td>@item.adress</td>
+                <td><a class="btn btn-danger" href="Person/Delete/@item.id">Delete</a> </td>
+            </tr>
+        }
+    </table>
+</div>
