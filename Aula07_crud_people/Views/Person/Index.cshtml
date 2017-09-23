@@ -1,4 +1,7 @@
 @model IEnumerable<crud_people.Models.Person>
+
+<a href="Person/Create">Nova Pessoa</a>
+
 <div class="container">
     <table class="table">
         <thead>
@@ -17,8 +20,9 @@
             <tr>
                 <td>@item.id</td>
                 <td>@item.name</td>
-                <td>@item.adress</td>
+                <td>@item.address</td>
                 <td><a class="btn btn-danger" href="Person/Delete/@item.id">Delete</a> </td>
+                <td><a class="btn btn-primary" href="Person/Edit/@item.id">Editar</a> </td>
             </tr>
         }
     </table>
