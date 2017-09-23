@@ -12,7 +12,7 @@
     - implementar **GetAll()* return people;
     - Criar um método fill para preencher inicialmente a lista com dados fixos
 
-- <h3>Aula01 - Model Person e Repositório</h3>
+- <h3>Aula02 - Model Person e Repositório (crud)</h3>
 
     - Criar o método Create(Person person) e adicionar na lista people;
     - Criar o método GetById(int id) buscando um objeto na lista people;
