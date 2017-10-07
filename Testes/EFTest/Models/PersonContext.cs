@@ -9,6 +9,7 @@ namespace EFTest.Models
             : base(options)
         { }
 
+
         public DbSet<Person> People { get; set; }
     }
 }

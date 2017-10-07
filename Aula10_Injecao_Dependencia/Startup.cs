@@ -2,15 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EFTest.Models;
+using DI_Test.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Pomelo.AspNetCore.Localization;
 
-namespace EFTest
+namespace DI_Test
 {
     public class Startup
     {
@@ -26,13 +24,9 @@ namespace EFTest
         {
             services.AddMvc();
 
-            //var connection = @"Server=(localdb)\mssqllocaldb;Database=EFGetStarted.AspNetCore.NewDb;Trusted_Connection=True;";
-            // services.AddDbContext<PersonContext>(options => 
-            //     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-                services.AddDbContext<PersonContext>(x => x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
-
-
+            services.AddSingleton<IRenderSingleton,RenderSingleton>();
+            services.AddScoped<IRenderScope,RenderScoped>();
+            services.AddTransient<IRenderTransient, RenderTransient>();
             
         }
 
