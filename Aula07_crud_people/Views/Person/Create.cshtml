@@ -1,4 +1,4 @@
-@model crud_people.Models.Person
+@model crud_people.Models.PersonViewModel
 
 <div class="form-horizontal">
     <form action="Create" method="Post">
@@ -19,6 +19,12 @@
             <label>Endereço</label>
             <input  class="form-control"
                     type="text" name="address"/>
+        </div>
+
+        <div class="form-group">
+            <label>Senha</label>
+            <input class="form-control"
+                   type="text" name="password" />
         </div>
 
         <input  class="btn btn-primary" 

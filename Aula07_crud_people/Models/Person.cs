@@ -13,6 +13,7 @@ namespace crud_people.Models
         public int id { get; set; }
         public string name { get; set; }
         public string address { get; set; }
+        public byte[] passwordHash { get; set; }
 
     }
 }

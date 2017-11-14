@@ -1,3 +1,4 @@
+using AutoMapper;
 using crud_people.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -20,8 +21,10 @@ namespace crud_people.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Person person)
+        public IActionResult Create(PersonViewModel obj)
         {
+            var person = Mapper.Map<Person>(obj);
+
             _repository.Create(person);
             return RedirectToAction("Index");
         }
