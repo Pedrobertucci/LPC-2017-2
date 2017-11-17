@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Financas.Repository;
+using Financas.Repository.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,10 @@ namespace Financas.UI
         {
             services.AddDbContext<FinancasContext>(x=>
                                 x.UseMySql(Configuration.GetConnectionString("DefaultConnection")));
+
+            services.AddScoped<IMemberRepository,MemberRepository>();
+            services.AddScoped<ICityRepository,CityRepository>();
+
             services.AddMvc();
         }
 

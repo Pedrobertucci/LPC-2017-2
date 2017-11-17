@@ -12,6 +12,6 @@ namespace Financas.Repository
         }
         public DbSet<Despesa> Despesas { get; set; }
         public DbSet<City> Cities {get;set;}
-        public DbSet<Members> Members { get; set; }
+        public DbSet<Member> Members { get; set; }
     }
 }

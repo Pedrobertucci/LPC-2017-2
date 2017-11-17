@@ -7,6 +7,6 @@ namespace Financas.Domain
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public IEnumerable<Members> Members { get; set; }
+        public IEnumerable<Member> Members { get; set; }
     }
 }
