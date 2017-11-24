@@ -1,0 +1,28 @@
+# no projeto Repositoy
+ - criar o repositório de cities (interface e class)
+ - criar o repositório de Members
+
+ - implementar os métodos de crud.
+ - nos gets e create, devemos incluir a City no member
+ ex. em GetAll() :
+
+return context.Members.Include(x => x.City).ToList();
+
+em GetById()
+return context.Members.Include(x=>x.City).SingleOrDefault(x=>x.Id == id);
+
+- no create
+        member.City = context.Cities.Find(member.Id);
+
+ 
+        context.Members.Add(member);
+            
+	context.SaveChanges();
+
+
+# no projeto UI
+
+- injetar a dependencia do repositório
+- criar o controller members e implementar os cruds.
+- Criar a view index.
+- criar a view create 
